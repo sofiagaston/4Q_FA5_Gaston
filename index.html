@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Structures</title>
+</head>
+<body>
+    <script>
+
+        var input = prompt("Please enter a number: ");
+        
+        while (isNaN(input)) {
+            alert("Invalid input. Please enter a number.");
+            input = prompt("Please enter a number: ");
+        }
+        
+        let num =+ input;
+        document.write("Number inputted: " + num + "<br/><br/>");
+        
+        if (num % 2 === 0) { 
+            for (var i = num; i > 0; i--) {
+                var row = "";
+                for (var count = 1; count <= i; count++) {
+                    row += i + " ";
+                }
+                document.write(row + "<br/>");
+            }
+        } else {
+            for (var i = num; i > 0; i--) {
+                var row = "";
+                for (var count = 1; count <= num; count++) {
+                    row += i + " ";
+                }
+                document.write(row + "<br/>");
+            }
+        }
+        </script>
+</body>
+</html>
