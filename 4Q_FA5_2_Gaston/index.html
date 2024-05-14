@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contacts List</title>
+</head>
+<body>
+  <h1>Contacts List</h1>
+  <label for="name">Enter a name</label>
+  <input type="text" id="name" name="name"/>
+  <button onclick="addContact()">Add</button>
+  <button onclick="removeContact()">Remove</button>
+  <ul id="c_list"></ul>
+  <script>
+    const c_list = [];
+    const c_list2 = document.getElementById("c_list");
+
+    function addContact() {
+      const name = document.getElementById("name").value;
+      if (name) {
+        if (c_list.length >= 7) {
+          c_list.shift();
+        }
+        c_list.push(name);
+        udContacts();
+        document.getElementById("name").value = "";
+      }
+    }
+
+    function removeContact() {
+      if (c_list.length > 0) {
+        c_list.pop();
+        udContacts();
+      }
+    }
+
+    function udContacts() {
+      c_list2.innerHTML = "";
+      for (let i = 0; i < c_list.length; i++) {
+        const listItem = document.createElement("li");
+        listItem.textContent = c_list[i];
+        c_list2.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>
